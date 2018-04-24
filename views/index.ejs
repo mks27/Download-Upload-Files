@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Download and Upload</title>
+<link rel="stylesheet" href="bootstrap.css">
+
+<style>{
+	.touch{
+		background-color:rgba(0,0,0,0.5);
+	}
+}
+
+#nav{
+	position:absolute;
+	top:0%;
+	left:0%;
+	width:100%;
+	height:15%;
+	background-color:#4277f4;
+	text-align:center;
+}
+
+.tempbtn{
+color:#f48942;
+margin-left:-60px;
+}
+
+.choose{
+  margin-left:40%;
+}
+
+.upl{
+margin-left:-5%;
+color:red;
+}
+
+
+
+</style>
+
+</head>
+
+<br>
+<body class="container" style="background-color:#41f1f4;">
+
+<div id="nav">
+<h1>Download and Upload Files </h1>
+</div>
+
+<div id="below">
+<h2> files available</h2>
+</div>
+
+<br>
+<ol style="text-align:center; color:white;">
+<% for(var i=0;i<files.length;i++){ %>
+<h3>
+<li style="color=white;">
+	<a href=' <%= files[i] %> '  >
+		<%= files[i] %>
+	</a>
+</li></h3>
+
+<% } %>
+<ol>
+<br><br>
+
+
+
+<form id        =  "uploadForm"
+     enctype   =  "multipart/form-data"
+     action    =  "http://127.0.0.1:3000/upload"
+     method    =  "post"
+>
+<input class="choose" type="file" name="sampleFile" /><br>
+<input class="upl" type="submit" value="Upload file" name="submit"/>
+</form>
+
+<br><br>
+
+
+
+
+</body>
+</html>
